@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  width: auto;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #242424;
+}
+
+ul {
+  list-style: none;
+}
+
+.container ul a {
+  text-align: center;
+}
+
+.container li {
+  margin-left: 1.5rem;
+}
+
+.container li a {
+  color: rgba(240, 248, 255, 0.815);
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.icon {
+  width: 2rem;
+  height: auto;
+}
+
+.iconContainer {
+  display: flex;
+}
+
+.iconContainer li {
+  justify-self: center;
+  align-items: center;
+}
