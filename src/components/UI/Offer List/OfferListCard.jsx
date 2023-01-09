@@ -3,21 +3,28 @@ import classes from './OfferListCard.module.css';
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
 import { useNavigate } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 const OfferListCard = (props) => {
   const [isToggled, setIsToggled] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const navigate = useNavigate();
 
   const bookmarkHandler = () => {
+    props.offerFinder(props.details.id);
     setIsToggled((prevState) => !prevState);
   };
 
   const navigateButtonHandler = () => {
-    navigate(`/praca/${props.details.id}`);
+    setSearchParams({ id: props.details.id });
+    const offer = props.offerFinder(props.details.id);
+
+    // navigate(`/praca?id=${props.details.id}`, { state: offer });
   };
   return (
-    <>
-      <div className={classes.container}>
+    <div className={classes.container}>
+      <div className={classes.upperinfo}>
         <div className={classes.info}>
           <span className={classes.title}>{props.details.title}</span>
           <div className={classes.category}>{props.details.category.label}</div>
@@ -49,7 +56,6 @@ const OfferListCard = (props) => {
           </div>
         )}
       </div>
-
       <p className={classes.description}>{props.details.description}</p>
 
       <button className={classes.button} onClick={navigateButtonHandler}>
@@ -60,7 +66,7 @@ const OfferListCard = (props) => {
         {!isToggled && <BookmarkBorderOutlinedIcon />}
         {isToggled && <BookmarkOutlinedIcon />}
       </button>
-    </>
+    </div>
   );
 };
 

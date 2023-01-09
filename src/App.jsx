@@ -15,9 +15,9 @@ function App() {
       <Search />
       <Routes>
         <Route path="/" exact element={<HomePage />} />
-        <Route path="/praca/" exact element={<OfferListPage />} />
+        <Route path="/praca" element={<OfferListPage />} />
         <Route path="/kariera" element={<CareerPage />} />
-        <Route path="/praca/:id" element={<OfferPage />} />
+        <Route path="/praca?id=:id" element={<OfferPage />} />
         <Route path="*" element={<NoPageFound />} />
       </Routes>
       <Footer />

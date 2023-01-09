@@ -13,6 +13,10 @@
   border-radius: 0.3rem;
   justify-content: space-between;
 }
+.upperinfo {
+  display: flex;
+  justify-content: space-between;
+}
 
 .title {
   align-self: center;

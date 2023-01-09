@@ -12,6 +12,10 @@ export const JobOffersApi = createApi({
       query: (page = 1) =>
         `/jobs/gb/search/${page}/?app_id=${APP_ID}&app_key=${APP_KEY}&results_per_page=10`,
     }),
+    searchOfferById: builder.query({
+      query: (id) =>
+        `/jobs/gb/search/1/?app_id=${APP_ID}&app_key=${APP_KEY}&&what=${id}`,
+    }),
   }),
 });
 
