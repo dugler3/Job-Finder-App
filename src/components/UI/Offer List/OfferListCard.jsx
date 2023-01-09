@@ -16,8 +16,8 @@ const OfferListCard = (props) => {
     navigate(`/praca/${props.details.id}`);
   };
   return (
-    <div className={classes.container}>
-      <div className={classes.offer}>
+    <>
+      <div className={classes.container}>
         <div className={classes.info}>
           <span className={classes.title}>{props.details.title}</span>
           <div className={classes.category}>{props.details.category.label}</div>
@@ -60,7 +60,7 @@ const OfferListCard = (props) => {
         {!isToggled && <BookmarkBorderOutlinedIcon />}
         {isToggled && <BookmarkOutlinedIcon />}
       </button>
-    </div>
+    </>
   );
 };
 

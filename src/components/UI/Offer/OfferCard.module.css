@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    width: 50%;
+    height: 75%;
+    margin: 2rem auto;
+    padding: 2rem;
+    -webkit-box-shadow: 8px 8px 24px -9px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 8px 8px 24px -9px rgba(66, 68, 90, 1);
+    box-shadow: 8px 8px 24px -9px rgba(66, 68, 90, 1);
+    border-radius: 0.3rem;
+    justify-content: space-between;
+    justify-items: center;
+  }
+  
+  .information {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    margin: 1rem;
+    border-left: solid 0.1rem #9995955b;
+  }
+  
+  .salary, .type, .location {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    
+  }
+  
+  .salary span, .type span, .location span, .map, .button {
+    margin: 1rem;
+  }
+  
+  .button {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    width: 85%;
+    height: 3rem;
+    border-radius: 0.4rem;
+    background-color: purple;
+    color: white;
+    font-size: 0.8rem;
+    border: none;
+    font-weight: 600;
+    padding: 1rem;
+  }
+  
+  
+  .button:hover {
+    cursor: pointer;
+  }

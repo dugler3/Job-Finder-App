@@ -5,7 +5,7 @@ import classes from './Footer.module.css';
 const Footer = () => {
   return (
     <footer>
-      <div className={classes.container}>
+      <div >
         <ul className={classes.container}>
           <li>
             <NavLink to="/praca">O nas</NavLink>
