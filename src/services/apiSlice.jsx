@@ -14,7 +14,7 @@ export const JobOffersApi = createApi({
     }),
     searchOfferById: builder.query({
       query: (id) =>
-        `/jobs/gb/search/1/?app_id=${APP_ID}&app_key=${APP_KEY}&&what=${id}`,
+        `/jobs/gb/search/1/?app_id=${APP_ID}&app_key=${APP_KEY}&what=${id}`,
     }),
   }),
 });
