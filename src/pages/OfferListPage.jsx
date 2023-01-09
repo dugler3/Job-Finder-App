@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Pagination from '../components/layout/Pagination/Pagination';
 import Wrapper from '../components/layout/Wrapper';
-import OfferListCard from '../components/UI/OfferCard';
+import OfferListCard from '../components/UI/Offer/OfferCard';
 import { useGetAllOffersQuery } from '../services/apiSlice';
 
 const OfferListPage = () => {

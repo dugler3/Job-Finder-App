@@ -1,5 +1,5 @@
-const Career = () => {
+const CareerPage = () => {
   return <p>Career</p>;
 };
 
-export default Career;
+export default CareerPage;

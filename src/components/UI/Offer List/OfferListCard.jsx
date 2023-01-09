@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import classes from './OfferCard.module.css';
+import classes from './OfferListCard.module.css';
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
 import { useNavigate } from 'react-router-dom';
 
-const OfferCard = (props) => {
+const OfferListCard = (props) => {
   const [isToggled, setIsToggled] = useState(false);
   const navigate = useNavigate();
 
@@ -64,4 +64,4 @@ const OfferCard = (props) => {
   );
 };
 
-export default OfferCard;
+export default OfferListCard;

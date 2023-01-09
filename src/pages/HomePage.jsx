@@ -1,11 +1,11 @@
-import Card from '../components/UI/Card';
+import HomePageCard from '../components/UI/Home Page/HomePageCard';
 
-const Home = () => {
+const HomePage = () => {
   return (
     <>
-      <Card />
+      <HomePageCard />
     </>
   );
 };
 
-export default Home;
+export default HomePage;

@@ -1,8 +1,8 @@
-import classes from './Card.module.css';
+import classes from './HomePageCard.module.css';
 
-import { Info } from '../HomePage/Info';
+import { Info } from '../../HomePage/Info';
 
-const Card = () => {
+const HomePageCard = () => {
   return (
     <div className={classes.container}>
       {Info.map((element) => {
@@ -24,4 +24,4 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default HomePageCard;
