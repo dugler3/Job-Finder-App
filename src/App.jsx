@@ -2,9 +2,9 @@ import { Route, Routes } from 'react-router-dom';
 import OfferListPage from './pages/OfferListPage';
 import CareerPage from './pages/CareerPage';
 import HomePage from './pages/HomePage';
-import Navbar from './components/layout/Navbar';
-import Footer from './components/layout/Footer';
-import Search from './components/layout/Search';
+import Navbar from './components/layout/Navbar/Navbar';
+import Footer from './components/layout/Footer/Footer';
+import Search from './components/layout/Search/Search';
 import OfferPage from './pages/OfferPage';
 import NoPageFound from './pages/NoPageFound';
 

@@ -1,4 +1,4 @@
-import Wrapper from '../components/layout/Wrapper';
+import Wrapper from '../components/layout/Wrapper/Wrapper';
 import OfferCard from '../components/UI/Offer/OfferCard';
 
 const OfferPage = () => {

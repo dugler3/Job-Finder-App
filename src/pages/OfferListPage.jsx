@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Pagination from '../components/layout/Pagination/Pagination';
-import Wrapper from '../components/layout/Wrapper';
+import Wrapper from '../components/layout/Wrapper/Wrapper';
 import OfferListCard from '../components/UI/Offer List/OfferListCard';
 import { useGetAllOffersQuery } from '../services/apiSlice';
 import Loader from '../components/layout/Loader/Loader';
