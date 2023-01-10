@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
 import classes from './Navbar.module.css';
-import logo from '../../assets/logo.png';
+import logo from '../../../assets/logo.png';
 
 const Navbar = () => {
   return (
@@ -12,10 +12,10 @@ const Navbar = () => {
       <nav className={classes.nav}>
         <ul>
           <li>
-            <NavLink to="/praca">Oferty pracy</NavLink>
+            <NavLink to="/offers">Offers</NavLink>
           </li>
           <li>
-            <NavLink to="/kariera">Moja kariera</NavLink>
+            <NavLink to="/bookmarks">Bookmarks</NavLink>
           </li>
         </ul>
       </nav>

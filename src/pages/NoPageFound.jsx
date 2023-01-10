@@ -1,5 +1,11 @@
+import NoPageFoundCard from '../components/UI/NoPageFound/NoPageFoundCard';
+
 const NoPageFound = () => {
-  return <>No page found</>;
+  return (
+    <>
+      <NoPageFoundCard />
+    </>
+  );
 };
 
 export default NoPageFound;

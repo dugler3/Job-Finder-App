@@ -23,20 +23,15 @@ const OfferCard = () => {
           <div className={classes.description}>{state.description}</div>
         </div>
         <div className={classes.information}>
-          <div className={classes.salary}>
-            <span>salary: </span>
-            <span>{state.salary_max}</span>
-          </div>
-          <div className={classes.type}>
-            <span>contract time: </span>
-            <span>{state.contract_time}</span>
-          </div>
-          <div className={classes.location}>
-            <span>Localization: </span>
-            <span>{state.location.display_name}</span>
-          </div>
-          <button className={classes.button}>Aplikuj</button>
-          <div className={classes.map}>map</div>
+          <span className={classes.salary}>£{state.salary_max}</span>
+          <span className={classes.type}>{state.contract_time}</span>
+          <span className={classes.location}>
+            {state.location.display_name}
+          </span>
+          <a href={state.redirect_url} target="_blank">
+            <button className={classes.button}>Aplikuj</button>
+          </a>
+          <button className={classes.map}>View map</button>
         </div>
         <button className={classes.bookmark} onClick={bookmarkHandler}>
           {!isToggled && <BookmarkBorderOutlinedIcon />}

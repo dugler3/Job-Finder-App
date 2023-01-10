@@ -7,7 +7,7 @@ import { useSearchParams } from 'react-router-dom';
 
 const OfferListCard = (props) => {
   const [isToggled, setIsToggled] = useState(false);
-  const [searchParams, setSearchParams] = useSearchParams();
+  // const [searchParams, setSearchParams] = useSearchParams('');
 
   const navigate = useNavigate();
 
@@ -17,10 +17,10 @@ const OfferListCard = (props) => {
   };
 
   const navigateButtonHandler = () => {
-    setSearchParams({ id: props.details.id });
+    // setSearchParams({ id: props.details.id });
     const offer = props.offerFinder(props.details.id);
 
-    // navigate(`/praca?id=${props.details.id}`, { state: offer });
+    navigate(`/offers/${props.details.id}`, { state: offer });
   };
   return (
     <div className={classes.container}>

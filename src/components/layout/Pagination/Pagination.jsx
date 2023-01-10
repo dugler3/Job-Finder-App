@@ -7,7 +7,7 @@ import PaginationNumberButtons from './PaginationNumberButtons';
 import { useState } from 'react';
 
 const Pagination = (props) => {
-  const [currentPageNumber, setCurrentPageNumber] = useState(1);
+  const [currentPageNumber, setCurrentPageNumber] = useState(props.page);
   let action;
 
   // Define how many buttons with page number should be in component besides last page (E.X for numOfButtons = 4 => 1 2 3 4 ... last page )

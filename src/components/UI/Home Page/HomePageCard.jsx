@@ -1,6 +1,6 @@
 import classes from './HomePageCard.module.css';
 
-import { Info } from '../../HomePage/Info';
+import { Info } from '../../../services/HomePageDummyInfo';
 
 const HomePageCard = () => {
   return (

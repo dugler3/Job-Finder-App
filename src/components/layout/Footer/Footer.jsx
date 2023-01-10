@@ -5,37 +5,39 @@ import classes from './Footer.module.css';
 const Footer = () => {
   return (
     <footer>
-      <ul className={classes.container}>
-        <li>
-          <NavLink to="/praca">O nas</NavLink>
-        </li>
-        <li>
-          <NavLink to="/praca">Kontakt</NavLink>
-        </li>
-        <li>
-          <NavLink to="/praca">Dupa</NavLink>
-        </li>
-        <li>
-          <NavLink to="/praca">Lorem</NavLink>
-        </li>
-      </ul>
-      <ul className={classes.container}>
-        <li>
-          <NavLink to="/praca">
-            <img className={classes.icon} src="/icons/facebook.png" />
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/praca">
-            <img className={classes.icon} src="/icons/twitter.png" />
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/praca">
-            <img className={classes.icon} src="/icons/linkedin.png" />
-          </NavLink>
-        </li>
-      </ul>
+      <div className={classes.container}>
+        <ul className={classes.container}>
+          <li>
+            <NavLink to="/offers">About</NavLink>
+          </li>
+          <li>
+            <NavLink to="/offers">Contact</NavLink>
+          </li>
+          <li>
+            <NavLink to="/offers">Get in touch</NavLink>
+          </li>
+          <li>
+            <NavLink to="/offers">Lorem</NavLink>
+          </li>
+        </ul>
+        <ul className={classes.container}>
+          <li>
+            <NavLink to="/offers">
+              <img className={classes.icon} src="/icons/facebook.png" />
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/offers">
+              <img className={classes.icon} src="/icons/twitter.png" />
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/offers">
+              <img className={classes.icon} src="/icons/linkedin.png" />
+            </NavLink>
+          </li>
+        </ul>
+      </div>
     </footer>
   );
 };

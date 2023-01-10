@@ -4,6 +4,9 @@ import Wrapper from '../components/layout/Wrapper/Wrapper';
 import OfferListCard from '../components/UI/Offer List/OfferListCard';
 import { useGetAllOffersQuery } from '../services/apiSlice';
 import Loader from '../components/layout/Loader/Loader';
+import Search from '../components/layout/Search/Search';
+import ErrorPage from './ErrorPage';
+
 
 const OfferListPage = () => {
   const [page, setPage] = useState(1);
@@ -21,9 +24,10 @@ const OfferListPage = () => {
 
   return (
     <>
+      <Search />
       <Wrapper>
         {error ? (
-          <>Kurwa, Marian...</>
+          <ErrorPage/>
         ) : isFetching ? (
           <Loader />
         ) : data ? (
@@ -38,10 +42,11 @@ const OfferListPage = () => {
             );
           })
         ) : null}
-        {data && (
+        {data && !isFetching && (
           <Pagination
             pageChangeHandler={pageChangeHandler}
             numPages={Math.ceil(data.count / 10)}
+            page={page}
           />
         )}
       </Wrapper>

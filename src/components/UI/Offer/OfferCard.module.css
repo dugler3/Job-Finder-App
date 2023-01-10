@@ -1,23 +1,33 @@
 .container {
   display: flex;
   width: 50%;
-  height: 75%;
-  margin: 2rem auto;
-  padding: 2rem;
+  min-height: 50vh;
+  margin: 5rem auto;
+  padding: 3rem;
+  min-height: 10rem;
   -webkit-box-shadow: 8px 8px 24px -9px rgba(66, 68, 90, 1);
   -moz-box-shadow: 8px 8px 24px -9px rgba(66, 68, 90, 1);
   box-shadow: 8px 8px 24px -9px rgba(66, 68, 90, 1);
   border-radius: 0.3rem;
   justify-content: space-between;
-  justify-items: center;
 }
 
 .information {
+  padding-left: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: 1rem;
   border-left: solid 0.1rem #9995955b;
+  min-width: 20%;
+}
+
+.information a {
+  align-self: center;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  text-decoration: none;
 }
 
 .salary,
@@ -26,28 +36,29 @@
   display: flex;
   justify-content: space-between;
   font-weight: 600;
+  margin: 1rem;
+  line-height: normal;
+}
+.salary {
+  font-size: 2rem;
 }
 
-.salary span,
-.type span,
-.location span,
-.map,
-.button {
-  margin: 1rem;
+.type,
+.location {
+  font-size: 1.2rem;
 }
 
 .button {
   display: flex;
-  align-self: center;
   align-items: center;
   justify-content: center;
-  justify-self: center;
+
   width: 85%;
   height: 3rem;
   border-radius: 0.4rem;
   background-color: purple;
   color: white;
-  font-size: 0.8rem;
+  font-size: 1.3rem;
   border: none;
   font-weight: 600;
   padding: 1rem;
@@ -80,4 +91,13 @@
   left: 73%;
   background-color: transparent;
   border: none;
+}
+
+.map {
+  background-color: transparent;
+  color: purple;
+  border: none;
+  font-style: italic;
+  font-size: 1rem;
+  margin: 1.2rem 0 0 0;
 }
