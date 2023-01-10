@@ -1,7 +1,9 @@
 .container {
+  position: relative;
   margin: 3rem 10rem;
   display: flex;
   justify-content: space-around;
+  animation: anim1 0.75s ease;
 }
 
 .card {
@@ -29,4 +31,15 @@
   display: flex;
   justify-content: space-around;
   border-bottom: solid 0.1rem #9995955b;
+}
+
+@keyframes anim1 {
+  from {
+    top: 150px;
+    left: 0px;
+  }
+  to {
+    top: 0px;
+    left: 0px;
+  }
 }
