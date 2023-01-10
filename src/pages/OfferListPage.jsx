@@ -3,6 +3,7 @@ import Pagination from '../components/layout/Pagination/Pagination';
 import Wrapper from '../components/layout/Wrapper';
 import OfferListCard from '../components/UI/Offer List/OfferListCard';
 import { useGetAllOffersQuery } from '../services/apiSlice';
+import Loader from '../components/layout/Loader/Loader';
 
 const OfferListPage = () => {
   const [page, setPage] = useState(1);
@@ -24,7 +25,7 @@ const OfferListPage = () => {
         {error ? (
           <>Kurwa, Marian...</>
         ) : isFetching ? (
-          <>Loading...</>
+          <Loader />
         ) : data ? (
           data.results.map((offer) => {
             return (
