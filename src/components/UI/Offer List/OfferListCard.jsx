@@ -13,6 +13,9 @@ const OfferListCard = (props) => {
 
   const bookmarkHandler = () => {
     props.offerFinder(props.details.id);
+    !isToggled &&
+      localStorage.setItem(props.details.id, JSON.stringify(props.details));
+    isToggled && localStorage.removeItem(props.details.id);
     setIsToggled((prevState) => !prevState);
   };
 

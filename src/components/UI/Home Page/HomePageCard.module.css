@@ -1,9 +1,11 @@
 .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   position: relative;
   margin: 3rem 10rem;
   display: flex;
   justify-content: space-around;
-  animation: anim1 0.75s ease;
+  animation: anim1 0.75s ease-in-out;
 }
 
 .card {
@@ -43,3 +45,24 @@
     left: 0px;
   }
 }
+
+/* @media (max-width: 1000px) {
+  .container {
+    display: grid;
+    margin: 5rem 0;
+  }
+  .card {
+    min-width: 40%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    display: grid;
+    margin: 5rem 0;
+  }
+  .card {
+    min-width: 40%;
+    margin: 2rem 0;
+  }
+} */

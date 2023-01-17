@@ -10,7 +10,8 @@ const OfferCard = () => {
   const { state } = useLocation();
 
   const bookmarkHandler = () => {
-    console.log(state);
+    !isToggled && localStorage.setItem(state.id, JSON.stringify(state));
+    isToggled && localStorage.removeItem(state.id);
     setIsToggled((prevState) => !prevState);
   };
 

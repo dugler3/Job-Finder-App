@@ -4,14 +4,19 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import PaginationNumberButtons from './PaginationNumberButtons';
-import { useState } from 'react';
 
 const Pagination = (props) => {
-  const [currentPageNumber, setCurrentPageNumber] = useState(props.page);
-  let action;
-
   // Define how many buttons with page number should be in component besides last page (E.X for numOfButtons = 4 => 1 2 3 4 ... last page )
   const numOfButtons = 4;
+
+  let requestedPageNumber = props.page;
+
+  let displayedPageNumber =
+    props.page > props.numPages - numOfButtons
+      ? props.numPages - numOfButtons
+      : props.page;
+
+  let action;
 
   // DOUBLE ARROW CHANGE
 
@@ -22,18 +27,11 @@ const Pagination = (props) => {
 
     // CONDITIONS
 
-    if (currentPageNumber === 1 && action === 1) {
+    if (requestedPageNumber === 1 && action === 1) {
       return;
     }
-    if (currentPageNumber === props.numPages && action === props.numPage) {
+    if (requestedPageNumber === props.numPages && action === props.numPages) {
       return;
-    }
-    if (action === props.numPages) {
-      // goToPage = action;
-      setCurrentPageNumber(action - numOfButtons);
-    } else {
-      // goToPage = action;
-      setCurrentPageNumber(action);
     }
     props.pageChangeHandler(action);
   };
@@ -47,31 +45,20 @@ const Pagination = (props) => {
 
     // CONDITIONS
 
-    if (currentPageNumber === 1 && action === -1) {
+    if (requestedPageNumber === 1 && action === -1) {
       return;
     }
-    if (currentPageNumber === props.numPages && action === 1) {
+    if (requestedPageNumber === props.numPages && action === 1) {
       return;
     }
-    if (currentPageNumber <= props.numPages - numOfButtons && action === -1) {
-      setCurrentPageNumber((prevState) => prevState + action);
-    }
-    if (currentPageNumber < props.numPages - numOfButtons && action === 1) {
-      setCurrentPageNumber((prevState) => prevState + action);
-    }
-    props.pageChangeHandler((prevState) => prevState + action);
+    props.pageChangeHandler(requestedPageNumber + action);
   };
+
   // NUMBER CHANGE
 
   // CONDITIONS
   const numberChangeHandler = (event) => {
     const clickedNumber = +event.target.innerText;
-
-    if (clickedNumber >= props.numPages - numOfButtons) {
-      setCurrentPageNumber(props.numPages - numOfButtons);
-    } else {
-      setCurrentPageNumber(clickedNumber);
-    }
     props.pageChangeHandler(clickedNumber);
   };
 
@@ -94,9 +81,9 @@ const Pagination = (props) => {
       <PaginationNumberButtons
         onButtonClick={numberChangeHandler}
         numOfButtons={numOfButtons}
-        currentPageNumber={currentPageNumber}
+        currentPageNumber={displayedPageNumber}
       />
-      {currentPageNumber < props.numPages - numOfButtons && (
+      {requestedPageNumber < props.numPages - numOfButtons && (
         <span className={classes.button}>...</span>
       )}
       <button

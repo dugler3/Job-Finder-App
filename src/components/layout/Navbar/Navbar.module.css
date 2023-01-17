@@ -30,8 +30,8 @@
   font-weight: 400;
 }
 .nav li a:hover {
-  font-size: 1.32rem;
-  color: white;
+  position: relative;
+  top: -2px;
 }
 
 .active {

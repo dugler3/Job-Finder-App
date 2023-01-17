@@ -1,5 +1,11 @@
+import BookmarkCard from '../components/UI/Bookmark/BookmarkCard';
+
 const BookmarkPage = () => {
-  return <p>Bookmark</p>;
+  return (
+    <p>
+      <BookmarkCard />
+    </p>
+  );
 };
 
 export default BookmarkPage;
