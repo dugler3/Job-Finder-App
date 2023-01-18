@@ -8,9 +8,17 @@ import classes from './BookmarkCard.module.css';
 const BookmarkCard = () => {
   const [isToggled, setIsToggled] = useState(true);
 
+  // const items;
+  let items = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    items.push(JSON.parse(localStorage.getItem(key)));
+  }
+  console.log(items);
+
   const bookmarkHandler = () => {
-    // !isToggled && localStorage.setItem(state.id, JSON.stringify(state));
-    // isToggled && localStorage.removeItem(state.id);
+    !isToggled && localStorage.setItem(state.id, JSON.stringify(state));
+    isToggled && localStorage.removeItem(state.id);
     setIsToggled((prevState) => !prevState);
   };
 
@@ -19,15 +27,12 @@ const BookmarkCard = () => {
       <Wrapper>
         {items
           ? items.map((state) => {
-              console.log(state);
               return (
-                <div key={state.id}>
-                  <div className={classes.container}>
+                <>
+                  <div className={classes.offercard_container}>
                     <div>
-                      <span className={classes.title}>{state.title}</span>
-                      <span className={classes.category}>
-                        {state.category.label}
-                      </span>
+                      <p className={classes.title}>{state.title}</p>
+                      <p className={classes.category}>{state.category.label}</p>
                       <div className={classes.description}>
                         {state.description}
                       </div>
@@ -43,19 +48,18 @@ const BookmarkCard = () => {
                         {state.location.display_name}
                       </span>
                       <a href={state.redirect_url} target="_blank">
-                        <button className={classes.button}>Aplikuj</button>
+                        <button>Aplikuj</button>
                       </a>
-                      <button className={classes.map}>View map</button>
+                      <a>
+                        <button className={classes.map}>View map</button>
+                      </a>
                     </div>
-                    <button
-                      className={classes.bookmark}
-                      onClick={bookmarkHandler}
-                    >
+                    <a className={classes.bookmark} onClick={bookmarkHandler}>
                       {!isToggled && <BookmarkBorderOutlinedIcon />}
                       {isToggled && <BookmarkOutlinedIcon />}
-                    </button>
+                    </a>
                   </div>
-                </div>
+                </>
               );
             })
           : null}

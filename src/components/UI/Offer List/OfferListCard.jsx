@@ -61,14 +61,12 @@ const OfferListCard = (props) => {
       </div>
       <p className={classes.description}>{props.details.description}</p>
 
-      <button className={classes.button} onClick={navigateButtonHandler}>
-        Przejdź do oferty
-      </button>
+      <button onClick={navigateButtonHandler}>Przejdź do oferty</button>
 
-      <button className={classes.bookmark} onClick={bookmarkHandler}>
+      <a className={classes.bookmark} onClick={bookmarkHandler}>
         {!isToggled && <BookmarkBorderOutlinedIcon />}
         {isToggled && <BookmarkOutlinedIcon />}
-      </button>
+      </a>
     </div>
   );
 };

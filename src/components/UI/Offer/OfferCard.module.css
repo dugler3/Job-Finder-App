@@ -1,4 +1,4 @@
-.container {
+.offercard_container {
   display: flex;
   width: 50%;
   min-height: 50vh;
@@ -48,7 +48,7 @@
   font-size: 1.2rem;
 }
 
-.button {
+.offercard_container button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,8 +64,11 @@
   padding: 1rem;
 }
 
-.button:hover {
+.offercard_container button:hover {
   cursor: pointer;
+  background-color: white;
+  color: purple;
+  border: solid 0.15rem purple;
 }
 
 .title {
@@ -87,17 +90,15 @@
 .bookmark {
   margin-top: 0;
   position: absolute;
-  color: black;
+  color: purple;
   left: 73%;
   background-color: transparent;
   border: none;
 }
+.bookmark:hover {
+  cursor: pointer;
+}
 
 .map {
-  background-color: transparent;
-  color: purple;
-  border: none;
-  font-style: italic;
-  font-size: 1rem;
   margin: 1.2rem 0 0 0;
 }

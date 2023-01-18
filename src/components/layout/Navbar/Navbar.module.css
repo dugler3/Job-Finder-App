@@ -32,11 +32,7 @@
 .nav li a:hover {
   position: relative;
   top: -2px;
-}
-
-.active {
-  font-size: 1.32rem;
-  color: black;
+  color: #bf00ff;
 }
 
 .image {

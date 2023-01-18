@@ -1,109 +1,78 @@
-import classes from './Pagination.module.css';
+import PaginationNumberButtons from './PaginationNumberButtons';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
-import PaginationNumberButtons from './PaginationNumberButtons';
+import classes from './Pagination.module.css';
 
-const Pagination = (props) => {
-  // Define how many buttons with page number should be in component besides last page (E.X for numOfButtons = 4 => 1 2 3 4 ... last page )
-  const numOfButtons = 4;
+const Pagination = ({ page, pageCount, pageChangeHandler }) => {
+  // Define how many siblings buttons should be in component (E.X for numOfButtons = 4 => 1 2 3 4 ... last page )
+  const numOfButtons = 3;
 
-  let requestedPageNumber = props.page;
+  // Display correct siblings buttons
+  let displayedPageNumber = page - 1;
 
-  let displayedPageNumber =
-    props.page > props.numPages - numOfButtons
-      ? props.numPages - numOfButtons
-      : props.page;
+  if (page > pageCount - numOfButtons) {
+    displayedPageNumber = pageCount - numOfButtons;
+  }
+  if (page === 1) {
+    displayedPageNumber = page;
+  }
 
-  let action;
-
-  // DOUBLE ARROW CHANGE
-
-  const doubleArrowChangeHandler = (event) => {
-    const buttonName = event.target.closest('button').name;
-
-    buttonName === 'first' ? (action = 1) : (action = props.numPages);
-
-    // CONDITIONS
-
-    if (requestedPageNumber === 1 && action === 1) {
-      return;
-    }
-    if (requestedPageNumber === props.numPages && action === props.numPages) {
-      return;
-    }
-    props.pageChangeHandler(action);
-  };
-
-  // ARROW CHANGE
-
-  const arrowChangeHandler = (event) => {
-    const buttonName = event.target.closest('button').name;
-
-    buttonName === 'forward' ? (action = 1) : (action = -1);
-
-    // CONDITIONS
-
-    if (requestedPageNumber === 1 && action === -1) {
-      return;
-    }
-    if (requestedPageNumber === props.numPages && action === 1) {
-      return;
-    }
-    props.pageChangeHandler(requestedPageNumber + action);
-  };
-
-  // NUMBER CHANGE
-
-  // CONDITIONS
   const numberChangeHandler = (event) => {
     const clickedNumber = +event.target.innerText;
-    props.pageChangeHandler(clickedNumber);
-  };
 
+    if (page === clickedNumber) {
+      return;
+    }
+    pageChangeHandler(clickedNumber);
+  };
   return (
     <div className={classes.pagination}>
       <button
-        className={classes.button}
-        name="first"
-        onClick={doubleArrowChangeHandler}
+        disabled={page === 1}
+        onClick={() => {
+          pageChangeHandler(1);
+        }}
       >
         <KeyboardDoubleArrowLeftIcon />
       </button>
       <button
-        className={classes.button}
-        name="back"
-        onClick={arrowChangeHandler}
+        disabled={page === 1}
+        onClick={() => {
+          pageChangeHandler(page - 1);
+        }}
       >
         <ArrowBackIosNewIcon />
       </button>
       <PaginationNumberButtons
         onButtonClick={numberChangeHandler}
         numOfButtons={numOfButtons}
-        currentPageNumber={displayedPageNumber}
+        displayedPageNumber={displayedPageNumber}
+        highlightedPage={page}
       />
-      {requestedPageNumber < props.numPages - numOfButtons && (
-        <span className={classes.button}>...</span>
+      {page <= pageCount - numOfButtons && (
+        <span className={classes.dots}>...</span>
       )}
       <button
-        className={classes.button}
-        name="number"
+        id={page === pageCount ? classes.active : ''}
         onClick={numberChangeHandler}
       >
-        {props.numPages}
+        {pageCount}
       </button>
       <button
-        className={classes.button}
-        name="forward"
-        onClick={arrowChangeHandler}
+        disabled={page === pageCount}
+        onClick={() => {
+          pageChangeHandler(page + 1);
+        }}
       >
         <ArrowForwardIosIcon />
       </button>
       <button
-        className={classes.button}
-        name="last"
-        onClick={doubleArrowChangeHandler}
+        disabled={page === pageCount}
+        onClick={() => {
+          pageChangeHandler(pageCount);
+        }}
       >
         <KeyboardDoubleArrowRightIcon />
       </button>

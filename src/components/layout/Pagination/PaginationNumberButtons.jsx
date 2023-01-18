@@ -8,15 +8,15 @@ const PaginationNumberButtons = (props) => {
     (v, i) => i
   );
 
-  return paginationButtonSteps.map((step) => {
+  return paginationButtonSteps.map((step, value) => {
+    const active = props.displayedPageNumber + step === props.highlightedPage;
     return (
       <button
         key={step}
-        name="number"
-        className={classes.button}
         onClick={props.onButtonClick}
+        id={active ? classes.active : ''}
       >
-        {props.currentPageNumber + step}
+        {props.displayedPageNumber + step}
       </button>
     );
   });

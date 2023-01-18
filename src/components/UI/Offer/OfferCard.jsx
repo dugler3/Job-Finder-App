@@ -17,7 +17,7 @@ const OfferCard = () => {
 
   return (
     <>
-      <div className={classes.container}>
+      <div className={classes.offercard_container}>
         <div>
           <p className={classes.title}>{state.title}</p>
           <p className={classes.category}>{state.category.label}</p>
@@ -30,14 +30,16 @@ const OfferCard = () => {
             {state.location.display_name}
           </span>
           <a href={state.redirect_url} target="_blank">
-            <button className={classes.button}>Aplikuj</button>
+            <button>Aplikuj</button>
           </a>
-          <button className={classes.map}>View map</button>
+          <a>
+            <button className={classes.map}>View map</button>
+          </a>
         </div>
-        <button className={classes.bookmark} onClick={bookmarkHandler}>
+        <a className={classes.bookmark} onClick={bookmarkHandler}>
           {!isToggled && <BookmarkBorderOutlinedIcon />}
           {isToggled && <BookmarkOutlinedIcon />}
-        </button>
+        </a>
       </div>
     </>
   );

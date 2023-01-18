@@ -3,7 +3,7 @@ import classes from './Search.module.css';
 const Search = () => {
   return (
     <>
-      <div className={classes.container}>
+      <div className={classes.search_container}>
         <form>
           <input
             type="text"
@@ -19,7 +19,7 @@ const Search = () => {
           />
         </form>
 
-        <button className={classes.button}>Szukaj</button>
+        <button>Szukaj</button>
       </div>
     </>
   );

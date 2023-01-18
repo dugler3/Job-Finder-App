@@ -7,7 +7,6 @@ import Loader from '../components/layout/Loader/Loader';
 import Search from '../components/layout/Search/Search';
 import ErrorPage from './ErrorPage';
 
-
 const OfferListPage = () => {
   const [page, setPage] = useState(1);
 
@@ -27,7 +26,7 @@ const OfferListPage = () => {
       <Search />
       <Wrapper>
         {error ? (
-          <ErrorPage/>
+          <ErrorPage />
         ) : isFetching ? (
           <Loader />
         ) : data ? (
@@ -45,7 +44,7 @@ const OfferListPage = () => {
         {data && !isFetching && (
           <Pagination
             pageChangeHandler={pageChangeHandler}
-            numPages={Math.ceil(data.count / 10)}
+            pageCount={Math.ceil(data.count / 10)}
             page={page}
           />
         )}

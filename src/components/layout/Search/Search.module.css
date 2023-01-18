@@ -1,4 +1,4 @@
-.container {
+.search_container {
   display: flex;
   justify-content: center;
   background-image: url('../../../assets/navbar.png');
@@ -8,7 +8,7 @@
   background-size: cover;
 }
 
-.container input {
+.search_container input {
   height: 4rem;
   margin-left: 0.5rem;
   border: none;
@@ -16,7 +16,7 @@
   padding-left: 0.8rem;
 }
 
-.container form {
+.search_container form {
   align-self: center;
 }
 
@@ -26,7 +26,7 @@
   font-size: 1.1rem;
 }
 
-.button {
+.search_container button {
   display: flex;
   align-self: center;
   align-items: center;
@@ -39,4 +39,9 @@
   height: 4rem;
   border-radius: 0.3rem;
   font-size: 1.1rem;
+}
+.search_container button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: purple;
 }

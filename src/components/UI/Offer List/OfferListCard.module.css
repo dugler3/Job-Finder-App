@@ -50,7 +50,7 @@
   min-width: 7rem;
 }
 
-.button {
+.container button {
   display: flex;
   align-self: center;
   align-items: center;
@@ -67,8 +67,11 @@
   margin-bottom: 1.6rem;
 }
 
-button:hover {
+.container button:hover {
   cursor: pointer;
+  background-color: white;
+  color: purple;
+  border: solid 0.15rem purple;
 }
 
 .description {
@@ -93,10 +96,14 @@ button:hover {
 .bookmark {
   margin-top: 0;
   position: absolute;
-  color: black;
+  color: purple;
   left: 73%;
   background-color: transparent;
   border: none;
+}
+
+.bookmark:hover {
+  cursor: pointer;
 }
 
 .navlink {
