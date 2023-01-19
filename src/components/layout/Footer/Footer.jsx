@@ -5,8 +5,8 @@ import classes from './Footer.module.css';
 const Footer = () => {
   return (
     <footer>
-      <div className={classes.container}>
-        <ul className={classes.container}>
+      <div className={classes.footer_container}>
+        <ul className={classes.footer_container}>
           <li>
             <NavLink to="/offers">About</NavLink>
           </li>
@@ -20,7 +20,7 @@ const Footer = () => {
             <NavLink to="/offers">Lorem</NavLink>
           </li>
         </ul>
-        <ul className={classes.container}>
+        <ul className={classes.footer_container}>
           <li>
             <NavLink to="/offers">
               <img className={classes.icon} src="/icons/facebook.png" />

@@ -41,7 +41,7 @@ const OfferListPage = () => {
             );
           })
         ) : null}
-        {data && !isFetching && (
+        {data && !isFetching && !error && (
           <Pagination
             pageChangeHandler={pageChangeHandler}
             pageCount={Math.ceil(data.count / 10)}

@@ -1,6 +1,36 @@
 .text {
-  margin: 10rem 0 5rem 0;
+  text-align: center;
+  margin: 5rem 0 5rem 0;
   font-size: 3rem;
   color: purple;
   font-weight: 600;
+}
+
+@media (width < 1024px) {
+  .text {
+    font-size: 2.4rem;
+    margin: 4rem 0 4rem 0;
+  }
+}
+
+@media (width < 768px) {
+  .text {
+    font-size: 1.8rem;
+    margin: 0 0 3rem 0;
+  }
+  .error_container {
+    text-align: center;
+  }
+  .error_container img {
+    width: 85%;
+  }
+}
+
+@media (width < 480px) {
+  .text {
+    font-size: 1.4rem;
+  }
+  .error_container img {
+    width: 85%;
+  }
 }

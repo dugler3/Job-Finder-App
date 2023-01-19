@@ -1,6 +1,5 @@
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+.homepage_container {
+  display: flex;
   position: relative;
   margin: 3rem 10rem;
   display: flex;
@@ -20,7 +19,6 @@
 .title {
   text-transform: uppercase;
   font-size: 1.4rem;
-  padding-bottom: 1.4rem;
   align-self: center;
 }
 
@@ -33,6 +31,7 @@
   display: flex;
   justify-content: space-around;
   border-bottom: solid 0.1rem #9995955b;
+  padding-bottom: 1rem;
 }
 
 @keyframes anim1 {
@@ -46,23 +45,47 @@
   }
 }
 
-/* @media (max-width: 1000px) {
-  .container {
-    display: grid;
-    margin: 5rem 0;
+@media (width < 1440px) {
+  .homepage_container {
+    align-items: center;
+    margin: 3rem 8rem;
   }
   .card {
-    min-width: 40%;
+    width: 40%;
+    margin: 1rem 1rem;
+  }
+  .top {
+    margin-bottom: 1rem;
   }
 }
 
-@media (max-width: 1000px) {
-  .container {
-    display: grid;
-    margin: 5rem 0;
+@media (width < 1024px) {
+  .homepage_container {
+    flex-direction: column;
+    margin: 3rem 6rem;
   }
   .card {
-    min-width: 40%;
+    width: 60%;
     margin: 2rem 0;
+    padding: 1rem 2rem;
   }
-} */
+}
+
+@media (width < 768px) {
+  .homepage_container {
+    margin: 3rem 4rem;
+  }
+  .card {
+    width: 80%;
+    margin: 2rem 0;
+    padding: 1rem 2rem;
+  }
+}
+
+@media (width < 480px) {
+  .card {
+    width: 100%;
+    margin: 2rem 0;
+    padding: 1rem 2rem;
+  }
+}

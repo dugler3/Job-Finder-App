@@ -4,7 +4,7 @@ footer {
   width: 100%;
 }
 
-.container {
+.footer_container {
   display: flex;
   width: auto;
   justify-content: space-around;
@@ -18,11 +18,11 @@ ul {
   list-style: none;
 }
 
-.container li {
+.footer_container li {
   margin: 0 1rem;
 }
 
-.container li a {
+.footer_container li a {
   color: rgba(240, 248, 255, 0.815);
   text-decoration: none;
   font-weight: 300;
@@ -43,4 +43,13 @@ ul {
 .iconContainer li {
   justify-self: center;
   align-items: center;
+}
+
+@media (width < 768px) {
+  .footer_container ul {
+    flex-direction: column;
+  }
+  .footer_container li {
+    margin: 0.2rem;
+  }
 }

@@ -4,7 +4,7 @@ import { Info } from '../../../services/HomePageDummyInfo';
 
 const HomePageCard = () => {
   return (
-    <div className={classes.container}>
+    <div className={classes.homepage_container}>
       {Info.map((element) => {
         return (
           <div className={classes.card} key={element.id}>

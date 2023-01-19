@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
 
 const OfferListCard = (props) => {
-  const [isToggled, setIsToggled] = useState(false);
+  const [isToggled, setIsToggled] = useState();
   // const [searchParams, setSearchParams] = useSearchParams('');
 
   const navigate = useNavigate();

@@ -31,3 +31,8 @@ body::after {
   display: block;
   height: 4rem; /* Set same as footer's height */
 }
+@media (width < 768px) {
+  body::after {
+    height: 7rem;
+  }
+}

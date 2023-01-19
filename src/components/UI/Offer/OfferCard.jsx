@@ -5,31 +5,35 @@ import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
 
 import classes from './OfferCard.module.css';
 
-const OfferCard = () => {
+const OfferCard = (props) => {
   const [isToggled, setIsToggled] = useState(false);
   const { state } = useLocation();
+  const bookmarkState = props.state;
+
+  const offer = state ?? bookmarkState;
 
   const bookmarkHandler = () => {
-    !isToggled && localStorage.setItem(state.id, JSON.stringify(state));
-    isToggled && localStorage.removeItem(state.id);
+    !isToggled && localStorage.setItem(offer.id, JSON.stringify(offer));
+    isToggled && localStorage.removeItem(offer.id);
     setIsToggled((prevState) => !prevState);
   };
-
   return (
     <>
       <div className={classes.offercard_container}>
-        <div>
-          <p className={classes.title}>{state.title}</p>
-          <p className={classes.category}>{state.category.label}</p>
-          <div className={classes.description}>{state.description}</div>
+        <div className={classes.left}>
+          <div>
+            <p className={classes.title}>{offer.title}</p>
+            <p className={classes.category}>{offer.category.label}</p>
+          </div>
+          <div className={classes.description}>{offer.description}</div>
         </div>
         <div className={classes.information}>
-          <span className={classes.salary}>£{state.salary_max}</span>
-          <span className={classes.type}>{state.contract_time}</span>
+          <span className={classes.salary}>£{offer.salary_max}</span>
+          <span className={classes.type}>{offer.contract_time}</span>
           <span className={classes.location}>
-            {state.location.display_name}
+            {offer.location.display_name}
           </span>
-          <a href={state.redirect_url} target="_blank">
+          <a href={offer.redirect_url} target="_blank">
             <button>Aplikuj</button>
           </a>
           <a>
